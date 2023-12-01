@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85C4E1722B19EAA3008C4FF1 /* OOP Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4E1712B19EAA3008C4FF1 /* OOP Example.swift */; };
 		F70EB6322B17A270001FB1A8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70EB6312B17A270001FB1A8 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		85C4E1712B19EAA3008C4FF1 /* OOP Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OOP Example.swift"; sourceTree = "<group>"; };
 		F70EB62E2B17A270001FB1A8 /* Smart Home */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Smart Home"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70EB6312B17A270001FB1A8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				F70EB6312B17A270001FB1A8 /* main.swift */,
+				85C4E1712B19EAA3008C4FF1 /* OOP Example.swift */,
 			);
 			path = "Smart Home";
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C4E1722B19EAA3008C4FF1 /* OOP Example.swift in Sources */,
 				F70EB6322B17A270001FB1A8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

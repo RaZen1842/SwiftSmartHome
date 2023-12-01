@@ -1,23 +1,30 @@
-//
-//  main.swift
-//  Smart Home
-//
-//  Created by Smith, Oli (AMM) on 29/11/2023.
-//
-
 import Foundation
 
 class SmartHome {
     
-    private var devices = [Devices]()
+    private var devices = [Device]()
     
-    func getDevicesStatuses() {
-        
+    func addDevice(device: Device) {
+        self.devices.append(device)
     }
     
+    func buyLightBulb() {
+        var light = Light(isOn: true, colour: "orange", type: "LED", intensity: 5)
+        addDevice(device: light)
+    }
+    
+    
+    func getDeviceStatus() {
+        
+        for device in devices {
+            device.printProperties()
+        }
+    }
+    
+
 }
 
-class Devices: SmartHome {
+class Device {
     private var isOn: Bool
     private var type: String
     
@@ -25,24 +32,53 @@ class Devices: SmartHome {
         self.isOn = isOn
         self.type = type
     }
-}
-
-class Lights: Devices {
-    let colour: String
     
-    init (isOn: Bool, colour: String, type: String) {
-        self.colour = colour
-        super.init(isOn: isOn, type: type)
+    func printProperties() {
+        print("On: \(self.isOn)")
+        print("Type: \(self.type)")
     }
+
 }
 
-class Heaters: Devices {
-    var intensity: Int
+class Light: Device {
+    private let colour: String
+    private let intensity: Int
     
-    init(isOn: Bool, type: String, intensity: Int) {
+    init (isOn: Bool, colour: String, type: String, intensity: Int) {
+        self.colour = colour
         self.intensity = intensity
         super.init(isOn: isOn, type: type)
     }
     
+    override func printProperties() {
+        print("Color: \(self.colour)")
+        print("Intensity: \(self.intensity)")
+    }
 }
 
+class Heaters: Device {
+    private var temperature: Double
+    
+    init(isOn: Bool, type: String, temperature: Double) {
+        self.temperature = temperature
+        super.init(isOn: isOn, type: type)
+    }
+    
+    override func printProperties() {
+        print("Temperature: \(self.temperature)")
+    }
+    
+}
+
+class Audio: Device {
+    private var volume: Int
+    
+    init(isOn: Bool, type: String, volume: Int) {
+        self.volume = volume
+        super.init(isOn: isOn, type: type)
+    }
+}
+
+
+
+let myHome = SmartHome()
