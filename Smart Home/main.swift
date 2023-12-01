@@ -19,26 +19,30 @@ class SmartHome {
 
 class Devices: SmartHome {
     private var isOn: Bool
-    private var intensity: Int
+    private var type: String
     
-    
-    init (isOn: Bool, intensity: Int) {
+    init (isOn: Bool, type: String) {
         self.isOn = isOn
-        self.intensity = intensity
+        self.type = type
     }
 }
 
 class Lights: Devices {
     let colour: String
-    let type: String
     
-    init (isOn: Bool, intensity: Int, colour: String, type: String) {
+    init (isOn: Bool, colour: String, type: String) {
         self.colour = colour
-        self.type = type
-        super.init(isOn: isOn, intensity: intensity)
+        super.init(isOn: isOn, type: type)
     }
 }
 
 class Heaters: Devices {
+    var intensity: Int
+    
+    init(isOn: Bool, type: String, intensity: Int) {
+        self.intensity = intensity
+        super.init(isOn: isOn, type: type)
+    }
     
 }
+
